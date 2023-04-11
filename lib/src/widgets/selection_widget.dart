@@ -54,9 +54,9 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
 
     searchBoxController = widget.popupProps.searchFieldProps.controller ??
         TextEditingController();
-    searchBoxController.addListener(() {
+    searchBoxController.addListener(() async {
       if (widget.popupProps.onAsyncSearch != null) {
-        _manageItemsByFilter(
+        await _manageItemsByFilter(
           searchBoxController.text,
           isAsyncSearch: true,
         );
@@ -250,8 +250,7 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
     );
 
     if (widget.popupProps.validationWidgetBuilder != null) {
-      return widget.popupProps.validationWidgetBuilder!(
-          context, _selectedItems);
+      return widget.popupProps.validationWidgetBuilder!(context, onValidate);
     }
 
     return defaultValidation;
@@ -288,7 +287,7 @@ class SelectionWidgetState<T> extends State<SelectionWidget<T>> {
       return Container(
         height: 70,
         alignment: Alignment.center,
-        child: Text("No data found"),
+        child: Text(widget.popupProps.noDataText ?? "No data found"),
       );
   }
 

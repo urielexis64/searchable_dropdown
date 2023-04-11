@@ -81,6 +81,8 @@ class PopupProps<T> {
 
   final Future<List<T>> Function(String query)? onAsyncSearch;
 
+  final String? noDataText;
+
   const PopupProps._({
     this.mode = Mode.MENU,
     this.fit = FlexFit.tight,
@@ -107,6 +109,7 @@ class PopupProps<T> {
     this.constraints = const BoxConstraints(),
     this.interceptCallBacks = false,
     this.onAsyncSearch,
+    this.noDataText,
   });
 
   const PopupProps.menu({
@@ -131,6 +134,7 @@ class PopupProps<T> {
     this.constraints = const BoxConstraints(maxHeight: 350),
     this.interceptCallBacks = false,
     this.onAsyncSearch,
+    this.noDataText,
   })  : this.mode = Mode.MENU,
         this.bottomSheetProps = const BottomSheetProps(),
         this.dialogProps = const DialogProps(),
@@ -162,6 +166,7 @@ class PopupProps<T> {
     ),
     this.interceptCallBacks = false,
     this.onAsyncSearch,
+    this.noDataText,
   })  : this.mode = Mode.DIALOG,
         this.menuProps = const MenuProps(),
         this.bottomSheetProps = const BottomSheetProps(),
@@ -189,6 +194,7 @@ class PopupProps<T> {
     this.constraints = const BoxConstraints(maxHeight: 500),
     this.interceptCallBacks = false,
     this.onAsyncSearch,
+    this.noDataText,
   })  : this.mode = Mode.BOTTOM_SHEET,
         this.menuProps = const MenuProps(),
         this.dialogProps = const DialogProps(),
@@ -216,6 +222,7 @@ class PopupProps<T> {
     this.constraints = const BoxConstraints(maxHeight: 500),
     this.interceptCallBacks = false,
     this.onAsyncSearch,
+    this.noDataText,
   })  : this.mode = Mode.MODAL_BOTTOM_SHEET,
         this.menuProps = const MenuProps(),
         this.dialogProps = const DialogProps(),
@@ -263,6 +270,7 @@ class PopupPropsMultiSelection<T> extends PopupProps<T> {
     super.constraints = const BoxConstraints(maxHeight: 350),
     super.interceptCallBacks = false,
     super.onAsyncSearch,
+    super.noDataText,
     this.onItemAdded,
     this.onItemRemoved,
     this.selectionWidget,
@@ -292,6 +300,7 @@ class PopupPropsMultiSelection<T> extends PopupProps<T> {
     super.constraints = const BoxConstraints(maxHeight: 350),
     super.interceptCallBacks = false,
     super.onAsyncSearch,
+    super.noDataText,
     this.onItemAdded,
     this.onItemRemoved,
     this.selectionWidget,
@@ -325,6 +334,7 @@ class PopupPropsMultiSelection<T> extends PopupProps<T> {
     ),
     super.interceptCallBacks = false,
     super.onAsyncSearch,
+    super.noDataText,
     this.onItemAdded,
     this.onItemRemoved,
     this.selectionWidget,
@@ -354,6 +364,7 @@ class PopupPropsMultiSelection<T> extends PopupProps<T> {
     super.constraints = const BoxConstraints(maxHeight: 500),
     super.interceptCallBacks = false,
     super.onAsyncSearch,
+    super.noDataText,
     this.onItemAdded,
     this.onItemRemoved,
     this.selectionWidget,
@@ -383,6 +394,7 @@ class PopupPropsMultiSelection<T> extends PopupProps<T> {
     super.constraints = const BoxConstraints(maxHeight: 500),
     super.interceptCallBacks = false,
     super.onAsyncSearch,
+    super.noDataText,
     this.onItemAdded,
     this.onItemRemoved,
     this.selectionWidget,

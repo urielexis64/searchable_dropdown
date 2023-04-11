@@ -62,7 +62,7 @@ typedef Widget FavoriteItemsBuilder<T>(
 );
 typedef Widget ValidationMultiSelectionBuilder<T>(
   BuildContext context,
-  List<T> item,
+  VoidCallback onValidate,
 );
 
 typedef RelativeRect PositionCallback(
